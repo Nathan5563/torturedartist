@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Endless Draft</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <audio id="typeSound" src="type.mp3" preload="auto"></audio>
+
+    <div id="container">
+      <div id="hand"></div>
+      <button id="beginBtn" onclick="beginDraft()">Begin Draft</button>
+      <div id="poem"></div>
+      <div id="controls">
+        <button onclick="editDraft()">Edit</button>
+        <button onclick="finalizeDraft()" id="finalizeDraft">Finalize</button>
+      </div>
+      <div id="promptContainer">
+        <div id="promptText"></div>
+        <div>
+          <button id="promptYes">Finalize</button>
+          <button id="promptNo">Keep Editing</button>
+        </div>
+      </div>
+      <div id="endMessage"></div>
+    </div>
+
+    <div id="globalOverlay"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

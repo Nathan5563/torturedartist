@@ -1,0 +1,150 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Courier New", monospace;
+  background-color: #b38252;
+  transition: background-color 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#globalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-color: red;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 9999;
+}
+
+#globalOverlay.active {
+  opacity: 1;
+}
+
+#container {
+  position: relative;
+  background: #fff;
+  width: 500px;
+  height: 700px;
+  padding: 2em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+#hand {
+  position: absolute;
+  top: -60px;
+  right: 15%;
+  width: 80px;
+  height: 80px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/7/72/Hand_icon.png")
+    no-repeat center center;
+  background-size: contain;
+  display: none;
+  animation: hover 1s ease-in-out infinite alternate;
+}
+
+@keyframes hover {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+#poem {
+  width: 100%;
+  font-size: 1.2em;
+  text-align: center;
+  display: none;
+  line-height: 1.5;
+}
+
+.scribble-animate {
+  text-decoration: line-through wavy red;
+  animation: scribbleAnim 0.3s ease;
+  margin-right: 4px;
+}
+
+.scribble-static {
+  text-decoration: line-through wavy red;
+  margin-right: 4px;
+}
+
+.new-word-animate {
+  opacity: 0;
+  display: inline-block;
+  animation: fadeIn 0.5s forwards 0.3s;
+  margin-left: 4px;
+}
+
+.new-word-static {
+  opacity: 1;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+@keyframes scribbleAnim {
+  from {
+    text-decoration-thickness: 1px;
+  }
+  to {
+    text-decoration-thickness: 4px;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#controls {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  gap: 1em;
+}
+
+#promptContainer {
+  position: absolute;
+  bottom: 100px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1em 2em;
+  border: 1px solid #333;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+#endMessage {
+  margin-top: 1em;
+  font-size: 1.5em;
+  color: #333;
+}
+
+button {
+  background: #1e1e1e;
+  color: white;
+  padding: 0.7em 1.5em;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0 10px;
+}
