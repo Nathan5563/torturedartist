@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="app.css" />
   </head>
   <body>
-    <audio id="typeSound" src="./type.mp3" preload="auto"></audio>
+    <audio id="typeSound" src="type.mp3" preload="auto"></audio>
 
     <div id="container">
       <div id="hand"></div>
