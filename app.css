@@ -1,3 +1,5 @@
+/* app.css */
+
 html,
 body {
   margin: 0;
@@ -11,6 +13,42 @@ body {
   align-items: center;
 }
 
+/* The “scene” now has your desk photo as background */
+#scene {
+  position: relative;
+  width: 100vw;    /* match your typewriter.png width */
+  height: 100vh;   /* adjust to show the right amount of desk */
+  background: url("tabel.jpg") no-repeat bottom center;
+  background-size: cover;
+}
+
+#typewriter {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;    /* adjust to match typewriter.png */
+  z-index: 1;      /* underneath the page */
+  pointer-events: none;
+}
+
+#container {
+  position: absolute;
+  top: 9%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  width: 280px;
+  height: 340px;
+  padding: 2em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;      /* above the typewriter */
+}
+
 #globalOverlay {
   position: fixed;
   top: 0;
@@ -20,7 +58,6 @@ body {
   pointer-events: none;
   background-color: red;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-  -webkit-mix-blend-mode: overlay;
   mix-blend-mode: overlay;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -31,17 +68,20 @@ body {
   opacity: 1;
 }
 
-#container {
-  position: relative;
-  background: #fff;
-  width: 500px;
-  height: 700px;
-  padding: 2em;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
+#hand {
+  position: absolute;
+  top: -60px;
+  right: 15%;
+  width: 80px;
+  height: 80px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/7/72/Hand_icon.png") no-repeat center center;
+  background-size: contain;
+  animation: hover 1s ease-in-out infinite alternate;
+}
+
+@keyframes hover {
+  from { transform: translateY(0); }
+  to   { transform: translateY(10px); }
 }
 
 #poem {
@@ -69,33 +109,6 @@ body {
   margin-left: 4px;
 }
 
-@-webkit-keyframes scribbleAnim {
-  from {
-    text-decoration-thickness: 1px;
-  }
-  to {
-    text-decoration-thickness: 4px;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .new-word-static {
   opacity: 1;
   display: inline-block;
@@ -103,18 +116,13 @@ body {
 }
 
 @keyframes scribbleAnim {
-  from {
-    text-decoration-thickness: 1px;
-  }
-  to {
-    text-decoration-thickness: 4px;
-  }
+  from { text-decoration-thickness: 1px; }
+  to   { text-decoration-thickness: 4px; }
 }
 
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 #controls {

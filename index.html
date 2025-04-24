@@ -1,13 +1,16 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Completion</title>
-    <link rel="stylesheet" href="app.css" />
-  </head>
-  <body>
-    <audio id="typeSound" src="./type.mp3" preload="auto"></audio>
+<head>
+  <meta charset="UTF-8" />
+  <title>Completion</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <audio id="typeSound" src="./type.mp3" preload="auto"></audio>
 
+  <div id="scene">
+    <img id="typewriter" src="typewriter.png" alt="Typewriter" />
     <div id="container">
       <button id="beginBtn" onclick="beginDraft()">Begin Draft</button>
       <div id="poem"></div>
@@ -24,9 +27,10 @@
       </div>
       <div id="endMessage"></div>
     </div>
+  </div>
 
-    <div id="globalOverlay"></div>
+  <div id="globalOverlay"></div>
 
-    <script src="app.js"></script>
-  </body>
+  <script src="app.js"></script>
+</body>
 </html>
