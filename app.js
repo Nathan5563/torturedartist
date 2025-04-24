@@ -1,7 +1,7 @@
 let poem = [
   ["The", "candle", "burns", "beside", "the", "page,"],
   ["A", "flicker", "dancing", "with", "my", "doubt."],
-  ["Each", "word,", "a", "thread", "I", "dare", "to", "tug—"],
+  ["Each", "word,", "a", "thread", "I", "dare", "to", "tug,"],
   ["Will", "it", "unravel", "me,", "or", "wrap", "me", "up?"],
 ];
 
