@@ -20,6 +20,7 @@ body {
   pointer-events: none;
   background-color: red;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  -webkit-mix-blend-mode: overlay;
   mix-blend-mode: overlay;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -52,8 +53,18 @@ body {
   background: url("https://upload.wikimedia.org/wikipedia/commons/7/72/Hand_icon.png")
     no-repeat center center;
   background-size: contain;
-  display: none;
+  -webkit-animation: hover 1s ease-in-out infinite alternate;
   animation: hover 1s ease-in-out infinite alternate;
+  animation: hover 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes hover {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
 }
 
 @keyframes hover {
@@ -86,9 +97,35 @@ body {
 
 .new-word-animate {
   opacity: 0;
-  display: inline-block;
   animation: fadeIn 0.5s forwards 0.3s;
   margin-left: 4px;
+}
+
+@-webkit-keyframes scribbleAnim {
+  from {
+    text-decoration-thickness: 1px;
+  }
+  to {
+    text-decoration-thickness: 4px;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .new-word-static {
