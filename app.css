@@ -44,38 +44,6 @@ body {
   overflow: hidden;
 }
 
-#hand {
-  position: absolute;
-  top: -60px;
-  right: 15%;
-  width: 80px;
-  height: 80px;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/7/72/Hand_icon.png")
-    no-repeat center center;
-  background-size: contain;
-  -webkit-animation: hover 1s ease-in-out infinite alternate;
-  animation: hover 1s ease-in-out infinite alternate;
-  animation: hover 1s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes hover {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(10px);
-  }
-}
-
-@keyframes hover {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(10px);
-  }
-}
-
 #poem {
   width: 100%;
   font-size: 1.2em;

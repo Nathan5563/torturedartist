@@ -129,9 +129,7 @@ document
 
 function beginDraft() {
   document.getElementById("beginBtn").style.display = "none";
-  document.getElementById("hand").style.display = "block";
   setTimeout(() => {
-    document.getElementById("hand").style.display = "none";
     document.getElementById("poem").style.display = "block";
     typeFullPoem(() => {
       document.getElementById("controls").style.display = "flex";
